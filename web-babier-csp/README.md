@@ -57,7 +57,7 @@ The name query param seems allows XSS
 
 ![Name query param XSS](name-query-xss.png)
 
-Key element is `<script nonce=${NONCE}>`. This is to ensure the script code is not introduced by some malicious third party. However this code is hard coded, which allows us to inject malicious script through the name query param.
+Key element is `<script nonce=${NONCE}>`. This ensures no script tags can not introduced by some malicious third party. However, as this is hard coded, it allows us to inject malicious script tag as long as we use the same `nonce` value.
 
 We can now submit the following script to the Admin bot:
 
